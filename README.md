@@ -1,13 +1,21 @@
-# Alexander Cardoza
-
-Founder of LynxFlow. I build developer tooling and write about the parts that break in production.
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white)
-[![lxlynx.com](https://img.shields.io/badge/lxlynx.com-1F2328?style=flat&logo=readme&logoColor=white)](https://lxlynx.com)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/lxlynx/lxlynx/main/assets/header.svg" alt="Alexander Cardoza — AI Toolchain Engineer" width="880"/>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/lxlynx/lxlynx/main/assets/now.svg" alt="now" width="720"/>
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" height="22"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white" height="22"/>
+  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat&logo=cloudflare&logoColor=white" height="22"/>
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white" height="22"/>
+  <img src="https://img.shields.io/badge/Neovim-57A143?style=flat&logo=neovim&logoColor=white" height="22"/>
+  <img src="https://img.shields.io/badge/lxlynx.com-1F2328?style=flat&logo=readme&logoColor=white" height="22"/>
+</p>
 
 ---
+
+Founder of LynxFlow. I build developer tooling and write about the parts that break in production.
 
 ## About
 
@@ -43,9 +51,22 @@ diffing two JSON exports.
 **[blog](https://github.com/lxlynx/blog)**
 Source for lxlynx.com. Plain Jekyll, no build pipeline, no trackers, no popups.
 
-**[LynxFlow](https://lxlynx.com)**
-The studio itself. Tooling and architecture work for teams small enough that one bad
-abstraction genuinely hurts.
+**[resume](https://github.com/lxlynx/resume)**
+A one-file Markdown resume template for engineers, with no build step and no personal
+contact details baked into the template.
+
+**[eval-harness](https://github.com/lxlynx/eval-harness)**
+A stdlib-only Python script that scores LLM outputs against multiple metrics —
+exact match, substring containment, token overlap, and custom callables. Run it
+before you commit a prompt change, not after the invoice arrives. The thing I
+reach for when "vibes-based eval" stops being defensible.
+
+**[model-router](https://github.com/lxlynx/model-router)**
+A rule-based routing layer that picks a model and endpoint by task type, cost
+ceiling, and context length. No embeddings, no learned weights, no dashboard.
+First matching rule wins, and you can read the entire routing logic in one
+screen. Built because every team running more than one model reinvents this
+badly, and I wanted the version I could explain at 3am.
 
 ## What I reach for
 
@@ -68,6 +89,16 @@ enough to predict how they fail.
   is broken and I am simply not being told yet.
 - Write the runbook while the context is still in my head, not the week after, when it
   becomes fiction.
+
+## 📊 Activity
+
+<p align="center">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=lxlynx&show_icons=true&theme=transparent&hide_border=true&count_private=true"/>
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lxlynx&layout=compact&theme=transparent&hide_border=true"/>
+</p>
+<p align="center">
+  <img width="720" src="https://github-readme-activity-graph.vercel.app/graph?username=lxlynx&theme=github-compact&hide_border=true&radius=8"/>
+</p>
 
 ## Writing
 
