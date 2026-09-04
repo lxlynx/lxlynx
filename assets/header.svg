@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="200" viewBox="0 0 880 200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="indigoPurple" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="lossGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="200" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.06" stroke="#6366f1" stroke-width="0.5">
+    <line x1="0" y1="50" x2="880" y2="50"/>
+    <line x1="0" y1="100" x2="880" y2="100"/>
+    <line x1="0" y1="150" x2="880" y2="150"/>
+    <line x1="220" y1="0" x2="220" y2="200"/>
+    <line x1="440" y1="0" x2="440" y2="200"/>
+    <line x1="660" y1="0" x2="660" y2="200"/>
+  </g>
+
+  <!-- === LEFT PANEL: Neural network node pulse (x: 10-290) === -->
+  <g transform="translate(10,15)">
+    <text x="10" y="12" font-family="monospace" font-size="8" fill="#6366f1" opacity="0.6">neural_pulse</text>
+    <!-- Layer 1 nodes -->
+    <g filter="url(#softglow)">
+      <circle cx="30" cy="45" r="5" fill="none" stroke="#6366f1" stroke-width="1.5">
+        <animate attributeName="r" values="3;7;3" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="30" cy="90" r="5" fill="none" stroke="#6366f1" stroke-width="1.5">
+        <animate attributeName="r" values="3;7;3" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="30" cy="135" r="5" fill="none" stroke="#8b5cf6" stroke-width="1.5">
+        <animate attributeName="r" values="3;7;3" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Layer 2 nodes -->
+      <circle cx="110" cy="55" r="5" fill="none" stroke="#8b5cf6" stroke-width="1.5">
+        <animate attributeName="r" values="3;7;3" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="110" cy="115" r="5" fill="none" stroke="#6366f1" stroke-width="1.5">
+        <animate attributeName="r" values="3;7;3" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Layer 3 (output) -->
+      <circle cx="190" cy="85" r="6" fill="none" stroke="url(#indigoPurple)" stroke-width="2">
+        <animate attributeName="r" values="4;9;4" dur="2s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- Connection lines with traveling pulses -->
+    <g stroke="#6366f1" stroke-width="0.8" opacity="0.4" fill="none">
+      <line x1="30" y1="45" x2="110" y2="55"/>
+      <line x1="30" y1="45" x2="110" y2="115"/>
+      <line x1="30" y1="90" x2="110" y2="55"/>
+      <line x1="30" y1="90" x2="110" y2="115"/>
+      <line x1="30" y1="135" x2="110" y2="55"/>
+      <line x1="30" y1="135" x2="110" y2="115"/>
+      <line x1="110" y1="55" x2="190" y2="85"/>
+      <line x1="110" y1="115" x2="190" y2="85"/>
+    </g>
+    <!-- Traveling pulse dots -->
+    <circle r="2.5" fill="#8b5cf6" filter="url(#glow)">
+      <animateMotion path="M30,45 L110,55" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.5" fill="#6366f1" filter="url(#glow)">
+      <animateMotion path="M30,90 L110,115" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.5" fill="#8b5cf6" filter="url(#glow)">
+      <animateMotion path="M110,55 L190,85" dur="1.5s" begin="0.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.5" fill="#6366f1" filter="url(#glow)">
+      <animateMotion path="M110,115 L190,85" dur="1.5s" begin="1.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Divider -->
+  <line x1="310" y1="20" x2="310" y2="180" stroke="#6366f1" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- === CENTER: Name + role + tags (x: 320-620) === -->
+  <g text-anchor="middle">
+    <text x="470" y="55" font-family="-apple-system,Segoe UI,sans-serif" font-size="24" font-weight="bold" fill="url(#indigoPurple)">
+      Alexander Cardoza
+      <animate attributeName="opacity" values="0;1" dur="1.5s" fill="freeze"/>
+    </text>
+    <text x="470" y="78" font-family="monospace" font-size="11" fill="#8b5cf6" opacity="0.8">
+      AI Toolchain Engineer
+    </text>
+    <text x="470" y="98" font-family="monospace" font-size="9" fill="#6366f1" opacity="0.6">
+      eval · routing · cost accounting · observability
+    </text>
+  </g>
+
+  <!-- === Token flow blocks scrolling (below name) === -->
+  <g transform="translate(330,110)" opacity="0.7">
+    <text x="0" y="-4" font-family="monospace" font-size="7" fill="#6366f1" opacity="0.5">token_stream</text>
+    <g filter="url(#softglow)">
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#6366f1">
+        <animate attributeName="x" values="-14;0;0" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#8b5cf6">
+        <animate attributeName="x" values="-14;16;16" dur="3s" begin="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="0.3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#6366f1">
+        <animate attributeName="x" values="-14;32;32" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="0.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#8b5cf6">
+        <animate attributeName="x" values="-14;48;48" dur="3s" begin="0.9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="0.9s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#6366f1">
+        <animate attributeName="x" values="-14;64;64" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#8b5cf6">
+        <animate attributeName="x" values="-14;80;80" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#6366f1">
+        <animate attributeName="x" values="-14;96;96" dur="3s" begin="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="1.8s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#8b5cf6">
+        <animate attributeName="x" values="-14;112;112" dur="3s" begin="2.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="2.1s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#6366f1">
+        <animate attributeName="x" values="-14;128;128" dur="3s" begin="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="2.4s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="0" width="12" height="12" rx="2" fill="#8b5cf6">
+        <animate attributeName="x" values="-14;144;144" dur="3s" begin="2.7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="2.7s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Divider -->
+  <line x1="630" y1="20" x2="630" y2="180" stroke="#8b5cf6" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- === RIGHT-TOP: Model card switching (x: 640-870, y: 10-90) === -->
+  <g transform="translate(640,15)">
+    <text x="5" y="8" font-family="monospace" font-size="7" fill="#8b5cf6" opacity="0.6">model_select</text>
+    <!-- Card background -->
+    <rect x="0" y="12" width="225" height="68" rx="6" fill="#161b22" stroke="#6366f1" stroke-width="0.5" opacity="0.8"/>
+    <!-- Model card 1 -->
+    <g opacity="1">
+      <animate attributeName="opacity" values="1;1;0;0;0;0;1" dur="9s" repeatCount="indefinite"/>
+      <text x="10" y="30" font-family="monospace" font-size="9" fill="#6366f1" font-weight="bold">claude-4-opus</text>
+      <text x="10" y="44" font-family="monospace" font-size="7" fill="#8b5cf6" opacity="0.7">ctx: 200k · $15/Mtok</text>
+      <rect x="10" y="50" width="80" height="6" rx="3" fill="#1c2128" stroke="#6366f1" stroke-width="0.3"/>
+      <rect x="10" y="50" width="72" height="6" rx="3" fill="#6366f1">
+        <animate attributeName="width" values="0;72" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <text x="10" y="68" font-family="monospace" font-size="6" fill="#8b5cf6" opacity="0.5">routed: complex reasoning</text>
+    </g>
+    <!-- Model card 2 -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0;0" dur="9s" repeatCount="indefinite"/>
+      <text x="10" y="30" font-family="monospace" font-size="9" fill="#8b5cf6" font-weight="bold">gpt-5-turbo</text>
+      <text x="10" y="44" font-family="monospace" font-size="7" fill="#6366f1" opacity="0.7">ctx: 128k · $5/Mtok</text>
+      <rect x="10" y="50" width="80" height="6" rx="3" fill="#1c2128" stroke="#8b5cf6" stroke-width="0.3"/>
+      <rect x="10" y="50" width="55" height="6" rx="3" fill="#8b5cf6">
+        <animate attributeName="width" values="0;55" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <text x="10" y="68" font-family="monospace" font-size="6" fill="#6366f1" opacity="0.5">routed: general chat</text>
+    </g>
+    <!-- Model card 3 -->
+    <g opacity="0">
+      <animate attributeName="opacity" values="0;0;0;0;1;1;0" dur="9s" repeatCount="indefinite"/>
+      <text x="10" y="30" font-family="monospace" font-size="9" fill="#6366f1" font-weight="bold">llama-4-70b</text>
+      <text x="10" y="44" font-family="monospace" font-size="7" fill="#8b5cf6" opacity="0.7">ctx: 64k · $0.6/Mtok</text>
+      <rect x="10" y="50" width="80" height="6" rx="3" fill="#1c2128" stroke="#6366f1" stroke-width="0.3"/>
+      <rect x="10" y="50" width="38" height="6" rx="3" fill="#6366f1">
+        <animate attributeName="width" values="0;38" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <text x="10" y="68" font-family="monospace" font-size="6" fill="#8b5cf6" opacity="0.5">routed: batch/low-cost</text>
+    </g>
+  </g>
+
+  <!-- === RIGHT-BOTTOM: Loss curve (x: 640-870, y: 100-185) === -->
+  <g transform="translate(640,105)">
+    <text x="5" y="8" font-family="monospace" font-size="7" fill="#6366f1" opacity="0.6">loss_curve</text>
+    <rect x="0" y="12" width="225" height="68" rx="6" fill="#161b22" stroke="#8b5cf6" stroke-width="0.5" opacity="0.5"/>
+    <!-- Loss curve path -->
+    <path d="M10,72 Q30,60 45,55 T80,40 Q100,35 120,32 T160,28 Q180,26 210,25" fill="none" stroke="#8b5cf6" stroke-width="1.5" opacity="0.8">
+      <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <!-- Loss area fill -->
+    <path d="M10,72 Q30,60 45,55 T80,40 Q100,35 120,32 T160,28 Q180,26 210,25 L210,80 L10,80 Z" fill="url(#lossGrad)">
+      <animate attributeName="opacity" values="0;0.6" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <!-- Axes -->
+    <line x1="10" y1="80" x2="210" y2="80" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
+    <line x1="10" y1="20" x2="10" y2="80" stroke="#6366f1" stroke-width="0.5" opacity="0.3"/>
+    <!-- Moving dot on curve -->
+    <circle r="2.5" fill="#8b5cf6" filter="url(#glow)">
+      <animateMotion path="M10,72 Q30,60 45,55 T80,40 Q100,35 120,32 T160,28 Q180,26 210,25" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Y axis label -->
+    <text x="2" y="22" font-family="monospace" font-size="5" fill="#6366f1" opacity="0.4">loss</text>
+    <text x="195" y="78" font-family="monospace" font-size="5" fill="#8b5cf6" opacity="0.4">epoch</text>
+  </g>
+
+  <!-- Blinking cursor bottom-right -->
+  <rect x="858" y="188" width="10" height="2" fill="#8b5cf6">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
