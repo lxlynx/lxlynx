@@ -93,11 +93,11 @@ enough to predict how they fail.
 ## 📊 Activity
 
 <p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=lxlynx&show_icons=true&theme=transparent&hide_border=true&count_private=true"/>
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lxlynx&layout=compact&theme=transparent&hide_border=true"/>
+  <img height="160" src="https://gh-profile-stats.zli39uclan.workers.dev/stats?username=lxlynx&hide_border=true"/>
+  <img height="160" src="https://gh-profile-stats.zli39uclan.workers.dev/top-langs?username=lxlynx&hide_border=true"/>
 </p>
 <p align="center">
-  <img width="720" src="https://github-readme-activity-graph.vercel.app/graph?username=lxlynx&theme=github-compact&hide_border=true&radius=8"/>
+  <img width="720" src="https://gh-profile-stats.zli39uclan.workers.dev/activity?username=lxlynx&hide_border=true"/>
 </p>
 
 ## Writing
