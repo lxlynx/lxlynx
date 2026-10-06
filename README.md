@@ -124,3 +124,12 @@ Slower to reply about anything that starts with "quick call?".
 
 <sub>Code in these repositories is MIT unless a repository says otherwise. Opinions are
 load-bearing and subject to revision.</sub>
+
+---
+
+## 🛰️ 频道
+
+我把 AI 产业链的观测结果每天记录在中文快讯频道:**[t.me/Lx_groups](https://t.me/Lx_groups)**
+(公开镜像:[t.me/s/Lx_groups](https://t.me/s/Lx_groups))
+长曝光在 [blog.lynxflow.co](https://blog.lynxflow.co);观测站说明:
+[blog.lxlynx.com/tg-channel-landing/](https://blog.lxlynx.com/tg-channel-landing/)
